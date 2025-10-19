@@ -1,39 +1,49 @@
-# NFTFlex
+# FlexTerminal
 
-Social Media Embed for Solana NFTs with Ownership Display & Liquidating an NFT to Any Token.
+Unified Trading Terminal for Stocks & Crypto — multi-exchange order routing, visual arbitrage detection and one-click strategies in a single app.
 
 ## ⚠️ Problem to Solve.
 
-There is a growing demand for easy ways to showcase Solana NFTs on social media platforms, along with information about the current owner's Twitter handle. Existing solutions do not provide a simple URL that generates a summary card with a large image and ownership information, making it difficult for users to share and display their NFTs on social media.
+Traders today must juggle multiple platforms: broker terminals for stocks (MT-style), centralized crypto exchanges, and decentralized protocols. That fragmentation causes slow decision-making, missed arbitrage, fragmented portfolios, and repetitive manual order placement. There’s no single, polished terminal that lets users place synchronized orders across CEX/DEXs, visually track cross-venue price divergences, and trigger one-click strategies.
 
 ## ✅ Possible Solution.
 
-**NFTFlex** is a user-friendly platform that enables users to display their Solana NFTs on social media with the following features:
+**FlexTerminal** is a desktop/web trading terminal that aggregates market data and order routing across centralized exchanges, decentralized exchanges and traditional brokers (MT5/FX brokers, retail broker APIs). It provides a single UI to place linked orders, visualize arbitrage opportunities, run prebuilt one-click strategies and backtest or simulate strategies across assets. With core capabilities including:
 
-1. **Social Media Embed**: Automatically generates a summary card with a large image and the owner's Twitter handle using a simple URL like `showoff.me/:mint-address`.
-
-2. **Cardinal Twitter Integration**: Displays the correct Twitter handle of the NFT owner, making it easy for users to show off their NFTs and build their online presence.
-
-3. **NFT Showcasing**: Empowers NFT owners to showcase their assets on social media platforms with full ownership details, enhancing NFT adoption.
+1. Unified order placement (route the same strategy to Binance, Coinbase, Alpaca, and AMMs).
+2. Visual arbitrage heatmaps and pair comparators across CEX ↔️ DEX ↔️ Brokers.
+3. One-click strategies: copyable templates (market-making, triangular arbitrage, paired trades).
+4. Smart order sizing and risk controls (per-trade and portfolio-level limits).
+5. Real-time streaming market data, orderbook & depth visualization.
+6. Portfolio aggregation and PnL across venues (realized/unrealized).
+7. Backtest & paper trading environment.
 
 ---
 
 ## ⚙️ Architecture.
 
-![NFTFlex Architecture](./)
+![FlexTerminal Architecture](./)
 [Excalidraw File](./)
 
 ---
 
 ## 🛠 Tools, Languages & Frameworks used.
 
-- **ReactJS**: Frontend library for building interactive user interfaces.
-- **Cardinal**: Integration for Twitter handle display linked with Solana wallets.
-- **Node.js**: Backend runtime environment for server-side JavaScript.
-- **Express.js**: Web framework for building RESTful APIs.
-- **Solana Web3.js**: JavaScript library to interact with the Solana blockchain.
-- **IPFS**: Decentralized storage for NFT metadata like images and descriptions.
-- **Solana**: Blockchain to support NFT transactions and ownership data.
+- **Electron / ReactJS:** Desktop UI (Electron) + React (TypeScript) for building a responsive, real-time terminal UI and charting workspace.
+- **TypeScript:** Primary language for frontend and backend services for type-safety and developer ergonomics.
+- **Node.js:** Backend runtime to orchestrate gateway APIs, adapters, and user sessions.
+- **Express.js / Fastify:** Framework for building RESTful and internal APIs between UI and backend services.
+- **CCXT:** Unified library for interacting with many centralized crypto exchanges (order placement, market data).
+- **FIX Engine / MT5 Bridge:** Integration layer for brokers and MT5-style execution (FIX protocol or broker SDKs).
+- **ethers.js / web3.js / @solana/web3.js:** On-chain libraries for composing and signing DEX transactions on EVM chains and Solana.
+- **Redis:** Fast cache and ephemeral state store for orderbooks, rate-limiting, and session data.
+- **PostgreSQL / TimescaleDB:** Persistent storage and time-series DB for historical tick data, trades, and PnL calculations.
+- **Rust / Go (optional):** Low-latency microservices for execution engine, market data normalization, or strategy runner.
+- **Python (Pandas / Backtesting libs):** Strategy backtesting, analytics, and quant research modules.
+- **WebSockets:** Real-time streaming of market data, order updates, and UI push messages.
+- **Charting Library (TradingView / Lightweight custom):** High-performance candlestick charts, depth charts, and custom arbitrage visualizations.
+- **WalletConnect / MetaMask / Custodial SDKs:** Wallet connections for signing on-chain DEX trades.
+- **CI/CD & Containerization:** Docker, Kubernetes for deployment of microservices and scaling market-data pipelines.
 
 ---
 
@@ -53,11 +63,11 @@ There is a growing demand for easy ways to showcase Solana NFTs on social media 
 
 ## 🔃 Steps to be followed in order to make valid contributions to this repo.
 
-**1.** Fork the [NFTFlex](https://github.com/mrinnnmoy/NFTFlex) repo by clicking on the fork button on the top of the page. This will create a copy of this repository in your account.
+**1.** Fork the [FlexTerminal](https://github.com/mrinnnmoy/FlexTerminal) repo by clicking on the fork button on the top of the page. This will create a copy of this repository in your account.
 
 **2.** Clone the forked repository
 
-        git clone "https://github.com/<your-github-username>/NFTFlex"
+        git clone "https://github.com/<your-github-username>/FlexTerminal"
 
 - Download and install Node JS v16.16.0
 - Download and install Git.
